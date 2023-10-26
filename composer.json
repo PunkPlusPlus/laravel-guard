@@ -1,0 +1,22 @@
+{
+    "name": "iddev/laravel-jwt-guard",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Iddev\\LaravelJwtGuard\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "idfedoseev",
+            "email": "idfedoseev@fintechiq.ru"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/contracts": "^10.29",
+        "predis/predis": "^2.2",
+        "firebase/php-jwt": "^6.9",
+        "phpseclib/phpseclib": "~3.0"
+    }
+}
