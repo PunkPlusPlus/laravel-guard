@@ -1,6 +1,6 @@
 <?php
 
-namespace Iddev\LaravelJwtGuard;
+namespace Core\LaravelJwtGuard;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Illuminate\Contracts\Auth\Authenticatable;
