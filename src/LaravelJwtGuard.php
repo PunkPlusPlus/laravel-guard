@@ -85,6 +85,7 @@ class LaravelJwtGuard implements Guard
         }
 
         $payload = $this->verifyToken();
+        dd($payload);
         $user = $this->provider->retrieveById($payload);
         if ($payload && !is_null($user)) {
             $this->setUser($user);
