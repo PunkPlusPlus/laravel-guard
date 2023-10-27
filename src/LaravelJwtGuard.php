@@ -28,9 +28,26 @@ class LaravelJwtGuard implements Guard
         $this->http = new HttpClient();
     }
 
+    public function getProvider()
+    {
+        return $this->provider;
+    }
+
+    public function setProvider(UserProvider $provider)
+    {
+        $this->provider = $provider;
+    }
+
     public function check()
     {
         return ! is_null($this->user());
+    }
+
+    public function forgetUser()
+    {
+        $this->user = null;
+
+        return $this;
     }
 
     public function guest()
@@ -74,6 +91,15 @@ class LaravelJwtGuard implements Guard
             return $user;
         }
         return null;
+    }
+
+    public function authenticate()
+    {
+        if (! is_null($user = $this->user())) {
+            return $user;
+        }
+
+        throw new \Exception('Unauthenticated');
     }
 
     private function verifyToken(): ?object
