@@ -1,6 +1,6 @@
 <?php
 
-namespace PrivateLibs\LaravelJwtGuard;
+namespace PrivateLibs\Auth;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -12,7 +12,7 @@ use phpseclib3\Math\BigInteger;
 use Predis\Client as RedisClient;
 use GuzzleHttp\Client as HttpClient;
 
-class LaravelJwtGuard implements Guard
+class StsGuard implements Guard
 {
     private RedisClient $redis;
     private HttpClient $http;
