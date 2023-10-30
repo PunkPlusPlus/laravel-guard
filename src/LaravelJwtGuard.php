@@ -16,6 +16,7 @@ class LaravelJwtGuard implements Guard
 {
     private RedisClient $redis;
     private HttpClient $http;
+    protected $user;
 
     public function __construct($request, UserProvider $provider)
     {
@@ -85,7 +86,6 @@ class LaravelJwtGuard implements Guard
         }
 
         $payload = $this->verifyToken();
-        dd($payload);
         $user = $this->provider->retrieveById($payload);
         if ($payload && !is_null($user)) {
             $this->setUser($user);
